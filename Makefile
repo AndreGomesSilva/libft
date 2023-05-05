@@ -1,46 +1,26 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/03 17:05:27 by angomes-         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME = libft.a
-
+UNITY_DIR = ./Unity
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+CFLAG = -Wall -Wextra -Werror
 RM = rm -f
+COLOR_TESTS =-D UNITY_OUTPUT_COLOR
 
-FILES = ft_strlen \
-				ft_memcpy \
+NAME_TESTE = libft_test
 
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+SRC_FILES =\
+	$(UNITY_DIR)/src/unity.c \
+	$(UNITY_DIR)/extras/fixture/src/unity_fixture.c \
+	src/*.c \
+	test/*.c \
+	test/test_group/*.c
 
-OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+INCLUDE_DIR =-Isrc -I$(UNITY_DIR)/src -I$(UNITY_DIR)/extras/fixture/src
+SYMBOLS =-DUNITY_FIXTURE_NO_EXTRAS
 
+all: clean default
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(NAME): $(OBJS)
-	$(AR) $@ $^
-
-all: $(NAME)
+default:
+	$(CC)$(CFlAGS)  $(INCLUDE_DIR) $(SYMBOLS) $(SRC_FILES) -o $(NAME_TESTE) $(COLOR_TESTS)
+	- ./$(NAME_TESTE) -v
 
 clean:
-	$(RM) $(OBJS)
-
-fclean: clean
-	$(RM) $(NAME)
-
-re: clean all
-
-.PHONY: bonus all clean fclean re
+	$(RM) $(NAME_TESTE)

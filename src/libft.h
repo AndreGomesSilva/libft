@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:07:36 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/06 21:24:37 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/07 14:03:27 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_isprint(int c);
 int		ft_atoi(const char *str);
-
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 #endif

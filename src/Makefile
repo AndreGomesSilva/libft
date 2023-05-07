@@ -6,7 +6,7 @@
 #    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/06 21:23:58 by angomes-         ###   ########.fr        #
+#    Updated: 2023/05/07 14:02:06 by angomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ FILES =\
 	ft_toupper \
 	ft_isprint \
 	ft_atoi	\
-
+	ft_strlcat \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

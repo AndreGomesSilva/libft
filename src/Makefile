@@ -6,7 +6,7 @@
 #    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/05 18:10:07 by angomes-         ###   ########.fr        #
+#    Updated: 2023/05/06 21:23:58 by angomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,15 @@ FILES =\
 	ft_memcpy \
 	ft_isalpha \
 	ft_isdigit \
+	ft_isalnum \
+	ft_isascii \
+	ft_strlcpy \
+	ft_strncmp \
+	ft_tolower \
+	ft_toupper \
+	ft_isprint \
+	ft_atoi	\
+
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

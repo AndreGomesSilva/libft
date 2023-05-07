@@ -42,3 +42,11 @@ TEST (ft_isalnum_test, should_return_false_when_pass_nonalnum)
 	c = '*';
 	TEST_ASSERT_FALSE(ft_isalnum(c) == 1);
 }
+
+TEST (ft_isalnum_test, should_return_false_symbol)
+{
+	char s;
+
+	s = '&';
+	TEST_ASSERT_FALSE(ft_isalnum(s) == 1);
+}

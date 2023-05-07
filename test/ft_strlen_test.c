@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 20:18:52 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/05 17:41:07 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:36:07 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ TEST (ft_strlen_test, should_return_null_from_string_null)
 	char	*str;
 	
 	str = "";
-	TEST_ASSERT_EQUAL_MESSAGE(0, ft_strlen(str), "return null from str");
+	TEST_ASSERT_EQUAL(0, ft_strlen(str));
 }
 
 

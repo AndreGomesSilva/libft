@@ -1,6 +1,6 @@
 UNITY_DIR = ./Unity
 CC = gcc
-CFLAG = -Wall -Wextra -Werror
+CFLAG = -Wall -Wextra -Werror -std=c99
 RM = rm -f
 COLOR_TESTS =-D UNITY_OUTPUT_COLOR
 

@@ -41,3 +41,9 @@ TEST(ft_atoi_test, should_return_negative_number)
 	TEST_ASSERT_EQUAL_INT(atoi(src), ft_atoi(src));
 
 }
+TEST(ft_atoi_test, should_return_null_when_pass_null)
+{
+	const char *src = "";
+	
+	TEST_ASSERT_EQUAL_INT(atoi(src), ft_atoi(src));
+}

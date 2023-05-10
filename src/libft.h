@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:07:36 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/07 14:03:27 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/09 22:18:57 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,7 @@ int		ft_toupper(int c);
 int		ft_isprint(int c);
 int		ft_atoi(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 #endif

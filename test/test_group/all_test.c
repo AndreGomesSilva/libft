@@ -62,7 +62,21 @@ TEST_GROUP_RUNNER(ft_atoi_test)
 	RUN_TEST_CASE(ft_atoi_test, should_ignore_init_spaces);
 	RUN_TEST_CASE(ft_atoi_test, should_return_possitive_number)
 	RUN_TEST_CASE(ft_atoi_test, should_return_negative_number)
+	RUN_TEST_CASE(ft_atoi_test, should_return_null_when_pass_null)
 }
+
+TEST_GROUP_RUNNER(ft_memmove_test)
+{
+	RUN_TEST_CASE(ft_memmove_test, should_return_dest_when_pass_size_0);
+	RUN_TEST_CASE(ft_memmove_test, overlap_whe_dest_is_biger_the_src);
+	RUN_TEST_CASE(ft_memmove_test, overlap_when_src_is_biger_then_dest);
+}
+
+TEST_GROUP_RUNNER(ft_memcmp_test)
+{
+	RUN_TEST_CASE(ft_memcmp_test, should_return_0_when_same_string);
+	RUN_TEST_CASE(ft_memcmp_test, shoud_return_positive_when_s1_biger_then_s2);
+}	
 
 static void	run_all_tests(void)
 {
@@ -75,6 +89,8 @@ static void	run_all_tests(void)
 	RUN_TEST_GROUP(ft_strlcpy_test);
 	RUN_TEST_GROUP(ft_strncmp_test);
 	RUN_TEST_GROUP(ft_atoi_test);
+	RUN_TEST_GROUP(ft_memmove_test);
+	RUN_TEST_GROUP(ft_memcmp_test);
 }
 
 int	main(int argc, const char *argv[])

@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 20:47:03 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/06 22:17:53 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:25:45 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@ int	ft_atoi(const char *str)
 	int	number;
 	int	sing;
 
-	sing = 0;
+	sing = 1;
 	number = 0;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
-			sing++;
+			sing *= -1;
 		++str;
 	}
 	if (*str == '+' || *str == '-')
@@ -33,7 +33,5 @@ int	ft_atoi(const char *str)
 		number += *str - 48;
 		++str;
 	}
-	if (!(sing % 2))
-		return (number);
-	return (-number);
+	return (number * sing);
 }

@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:21:07 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/14 18:25:49 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:35:09 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	const char	*cpys;
 
+	if (!s)
+		return (NULL);
 	cpys = s;
 	while (*cpys)
 	{
@@ -23,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)cpys);
 		cpys++;
 	}
+	if (!c)
+		return ((char *)cpys);
 	return (NULL);
 }

@@ -14,9 +14,9 @@ TEST_TEAR_DOWN(ft_memcpy_test)
 
 TEST (ft_memcpy_test, should_return_the_same_string)
 {
-	const char src[50] = "hello world 3000";
-	const char dest[50] = "tesseract";
+	const char src[20] = "hello world 3000";
+	char dest[20] = "tesseract";
+	char dest2[20] = "tesseract";
 
-	ft_memcpy(dest, src, ft_strlen(src) + 1);
-	TEST_ASSERT_EQUAL_STRING(src, dest);  
+	TEST_ASSERT_EQUAL_STRING(memcpy(dest2, src, 18) , ft_memcpy(dest, src,18)); 
 }

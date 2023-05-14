@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 20:21:09 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/11 15:31:23 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/14 12:16:38 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/14 12:23:06 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
-{	
-	size_t	i;
-	size_t	len;
+char	*ft_strdup(const char *s)
+{
+	size_t		size_str;
+	char		*new_str;
 
-	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (*(src + i) && --size)
-	{
-		*(dest + i) = *(src + i);
-		i++;
-	}
-	*(dest + i) = '\0';
-	return (len);
+	size_str = (ft_strlen(s)) + 1;
+	new_str = (char *) malloc(size_str * sizeof(char));
+	if (new_str == NULL)
+		return (NULL);
+	ft_strlcpy(new_str, s, size_str);
+	return (new_str);
 }

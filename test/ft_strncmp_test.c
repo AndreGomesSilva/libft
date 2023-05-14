@@ -44,3 +44,12 @@ TEST(ft_strncmp_test, should_return_false_if_n_is_null)
 	size_t	n = 0;
 	TEST_ASSERT_EQUAL(0, ft_strncmp(str1, str2, n));
 }
+
+TEST(ft_strncmp_test, should_return_positive_s1_equal_200_in_the_end)
+{
+	char	*str1 = "test\200";
+	char	*str2 = "test\0";
+	size_t	n = 6;
+	TEST_ASSERT_EQUAL(128, ft_strncmp(str1, str2, n));
+}
+

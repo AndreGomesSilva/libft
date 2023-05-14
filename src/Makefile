@@ -6,7 +6,7 @@
 #    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/09 22:18:40 by angomes-         ###   ########.fr        #
+#    Updated: 2023/05/14 17:55:29 by angomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,12 @@ FILES =\
 	ft_memset \
 	ft_memcmp \
 	ft_memchr \
+	ft_strchr \
+	ft_strrchr \
+	ft_strnstr \
+	ft_bzero \
+	ft_strdup \
+	ft_calloc \
 	
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
@@ -59,4 +65,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: bonus all clean fclean re
+.PHONY: all clean fclean re

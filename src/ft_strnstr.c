@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 20:21:09 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/11 15:31:23 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/13 13:34:21 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/14 11:12:31 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
-{	
-	size_t	i;
-	size_t	len;
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	little_len;
 
-	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (*(src + i) && --size)
+	little_len = ft_strlen(little);
+	if (little_len < 1)
+		return ((char *)big);
+	while (*big && len-- >= little_len)
 	{
-		*(dest + i) = *(src + i);
-		i++;
+		if (ft_strncmp(big, little, little_len) == 0)
+		{
+			return ((char *) big);
+		}
+			big++;
 	}
-	*(dest + i) = '\0';
-	return (len);
+	return (NULL);
 }

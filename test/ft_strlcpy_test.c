@@ -1,7 +1,6 @@
 #include "unity.h"
 #include "unity_fixture.h"
 #include "libft.h"
-#include <string.h>
 
 TEST_GROUP(ft_strlcpy_test);
 

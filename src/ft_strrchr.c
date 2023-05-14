@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 20:21:09 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/11 15:31:23 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/10 22:43:41 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/13 13:08:50 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <string.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
-{	
-	size_t	i;
-	size_t	len;
+char	*ft_strrchr(const char *s, int c)
+{
+	size_t		s_len;
+	char const	*cpys;	
 
-	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (*(src + i) && --size)
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	cpys = s;
+	cpys = s + s_len;
+	while (cpys != s)
 	{
-		*(dest + i) = *(src + i);
-		i++;
+		if (*(cpys) == (char) c)
+			return ((char *)cpys);
+		cpys--;
 	}
-	*(dest + i) = '\0';
-	return (len);
+	if (*(s) == (char) c)
+		return ((char *) s);
+	if (!c)
+		return ((char *) s);
+	return (NULL);
 }

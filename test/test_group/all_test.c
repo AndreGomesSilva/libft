@@ -54,6 +54,7 @@ TEST_GROUP_RUNNER(ft_strncmp_test)
 	RUN_TEST_CASE(ft_strncmp_test, should_return_possitive_value);
 	RUN_TEST_CASE(ft_strncmp_test, should_return_negative_value);
 	RUN_TEST_CASE(ft_strncmp_test, should_return_false_if_n_is_null);
+	RUN_TEST_CASE(ft_strncmp_test, should_return_positive_s1_equal_200_in_the_end);
 }
 
 TEST_GROUP_RUNNER(ft_atoi_test)
@@ -78,6 +79,40 @@ TEST_GROUP_RUNNER(ft_memcmp_test)
 	RUN_TEST_CASE(ft_memcmp_test, shoud_return_positive_when_s1_biger_then_s2);
 }	
 
+TEST_GROUP_RUNNER(ft_strlcat_test)
+{
+	RUN_TEST_CASE(ft_strlcat_test, should_return_len_dst_src_when_pass_size_0_dst_0);
+	RUN_TEST_CASE(ft_strlcat_test, should_return_dst_plus_onesrc_when_size_is_dst_plus_one);
+	RUN_TEST_CASE(ft_strlcat_test, should_return_10_and_concat_the_strings);
+}
+
+TEST_GROUP_RUNNER(ft_strchr_test)
+{
+	RUN_TEST_CASE(ft_strchr_test, should_return_NULL_if_str_is_null);
+	RUN_TEST_CASE(ft_strchr_test, should_return_the_right_position);
+}
+TEST_GROUP_RUNNER(ft_strrchr_test)
+{
+	RUN_TEST_CASE(ft_strrchr_test, should_return_the_search_char);
+	RUN_TEST_CASE(ft_strrchr_test, should_return_pointer_to_terminator_if_c_is_null);
+	RUN_TEST_CASE(ft_strrchr_test, should_return_the_last_char_we_looking_for);
+	RUN_TEST_CASE(ft_strrchr_test, should_return_NULL_when_char_not_found);
+}
+
+TEST_GROUP_RUNNER(ft_strnstr_test)
+{
+	RUN_TEST_CASE(ft_strnstr_test, should_return_bigstring_when_substring_is_empty);
+	RUN_TEST_CASE(ft_strnstr_test, should_return_NULL_when_substring_not_found_in_bigstring);
+	RUN_TEST_CASE(ft_strnstr_test, should_return_pointer_to_the_first_substring_found);
+	RUN_TEST_CASE(ft_strnstr_test, should_return_null_if_len_end_and_substring_is_more_than_one);
+	RUN_TEST_CASE(ft_strnstr_test, should_return_the_found_substring_if_len_is_negative);
+}
+
+TEST_GROUP_RUNNER(ft_bzero_test)
+{
+	RUN_TEST_CASE(ft_bzero_test, should_add_null_in_the_array_until_size);
+}
+
 static void	run_all_tests(void)
 {
 	RUN_TEST_GROUP(ft_strlen_test);
@@ -91,6 +126,11 @@ static void	run_all_tests(void)
 	RUN_TEST_GROUP(ft_atoi_test);
 	RUN_TEST_GROUP(ft_memmove_test);
 	RUN_TEST_GROUP(ft_memcmp_test);
+	RUN_TEST_GROUP(ft_strlcat_test);
+	RUN_TEST_GROUP(ft_strrchr_test);
+	RUN_TEST_GROUP(ft_strchr_test);
+	RUN_TEST_GROUP(ft_strnstr_test);
+	RUN_TEST_GROUP(ft_bzero_test);
 }
 
 int	main(int argc, const char *argv[])

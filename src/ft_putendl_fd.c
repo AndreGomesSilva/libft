@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 13:33:42 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/15 21:01:53 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/17 14:45:22 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/17 15:03:01 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdint.h>
+#include <unistd.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	void	*ptr;
+	size_t	s_len;
 
-	ptr = NULL;
-	if (nmemb == 0 || size == 0 || size >= SIZE_MAX || nmemb >= SIZE_MAX)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr)
-		ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	s_len = ft_strlen(s);
+	write(fd, s, s_len);
+	write(fd, "\n", 1);
 }

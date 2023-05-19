@@ -6,7 +6,7 @@
 #    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/14 17:55:29 by angomes-         ###   ########.fr        #
+#    Updated: 2023/05/19 11:23:18 by angomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,17 @@ FILES =\
 	ft_bzero \
 	ft_strdup \
 	ft_calloc \
-	
+	ft_substr \
+	ft_strjoin \
+	ft_striteri \
+	ft_strmapi \
+	ft_itoa \
+	ft_putchar_fd \
+	ft_putstr_fd \
+	ft_putendl_fd \
+	ft_putnbr_fd \
+	ft_strtrim	\
+
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 
@@ -54,6 +64,10 @@ OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
 $(NAME): $(OBJS)
 	$(AR) $@ $^
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 all: $(NAME)
 

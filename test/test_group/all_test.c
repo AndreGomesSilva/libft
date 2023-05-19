@@ -113,6 +113,30 @@ TEST_GROUP_RUNNER(ft_bzero_test)
 	RUN_TEST_CASE(ft_bzero_test, should_add_null_in_the_array_until_size);
 }
 
+TEST_GROUP_RUNNER(ft_substr_test)
+{
+	RUN_TEST_CASE(ft_substr_test, should_return_0_equal_str);
+	RUN_TEST_CASE(ft_substr_test, should_return_null_when_start_is_0);
+	RUN_TEST_CASE(ft_substr_test, should_return_just_the_last_char);
+
+}
+
+TEST_GROUP_RUNNER(ft_strjoin_test)
+{
+	RUN_TEST_CASE(ft_strjoin_test, should_return_the_str_concat);
+}
+
+TEST_GROUP_RUNNER(ft_strmapi_test)
+{
+	RUN_TEST_CASE(ft_strmapi_test, should_return_the_new_string_with_pointerf_apply);
+}
+
+TEST_GROUP_RUNNER(ft_strtrim_test)
+{
+	RUN_TEST_CASE(ft_strtrim_test, should_return_the_string_without_x);
+	RUN_TEST_CASE(ft_strtrim_test, should_return_null_s1_is_space_and_set_is_space);
+}
+
 static void	run_all_tests(void)
 {
 	RUN_TEST_GROUP(ft_strlen_test);
@@ -131,6 +155,10 @@ static void	run_all_tests(void)
 	RUN_TEST_GROUP(ft_strchr_test);
 	RUN_TEST_GROUP(ft_strnstr_test);
 	RUN_TEST_GROUP(ft_bzero_test);
+	RUN_TEST_GROUP(ft_substr_test);
+	RUN_TEST_GROUP(ft_strjoin_test);
+	RUN_TEST_GROUP(ft_strmapi_test);
+	RUN_TEST_GROUP(ft_strtrim_test);
 }
 
 int	main(int argc, const char *argv[])

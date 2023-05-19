@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 13:33:42 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/15 21:01:53 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/14 19:32:57 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/17 12:30:04 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdint.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*ptr;
+	char		*new_str;
+	const char	*substr;
+	size_t		s_len;
 
-	ptr = NULL;
-	if (nmemb == 0 || size == 0 || size >= SIZE_MAX || nmemb >= SIZE_MAX)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr)
-		ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	substr = &*(s + start);
+	s_len = ft_strlen(s);
+	if (s_len < start)
+		return (ft_strdup(""));
+	if (start + len > s_len)
+		len = s_len - start;
+	new_str = (char *) malloc((len + 1) * sizeof(char));
+	if (new_str != NULL)
+	{
+		ft_strlcpy(new_str, substr, len + 1);
+		return (new_str);
+	}
+	return (NULL);
 }

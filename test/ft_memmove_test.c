@@ -37,3 +37,11 @@ TEST (ft_memmove_test, overlap_whe_dest_is_biger_the_src)
 
 	TEST_ASSERT_EQUAL(memmove(dest, src+2, 4), ft_memmove(dest, src+2, 4));
 }
+
+TEST (ft_memmove_test, pass_src_and_dest_null_with_size) 
+{
+	const char	src[11] = "";
+	char		dest[11] = "";
+
+	TEST_ASSERT_EQUAL(memmove(dest, src, 0), ft_memmove(dest, src, 0));
+}

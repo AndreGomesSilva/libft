@@ -71,6 +71,7 @@ TEST_GROUP_RUNNER(ft_memmove_test)
 	RUN_TEST_CASE(ft_memmove_test, should_return_dest_when_pass_size_0);
 	RUN_TEST_CASE(ft_memmove_test, overlap_whe_dest_is_biger_the_src);
 	RUN_TEST_CASE(ft_memmove_test, overlap_when_src_is_biger_then_dest);
+	RUN_TEST_CASE(ft_memmove_test, pass_src_and_dest_null_with_size);
 }
 
 TEST_GROUP_RUNNER(ft_memcmp_test)

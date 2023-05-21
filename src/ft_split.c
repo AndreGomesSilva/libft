@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:22:59 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/20 21:20:15 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/21 14:28:08 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static void	ft_free(char **obj, int len)
 		free(obj[i]);
 		i++;
 	}
+	free(obj);
 }
 
 static int	ft_str_len(char *str, char c)

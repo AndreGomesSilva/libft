@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 10:45:01 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/20 21:21:16 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/21 12:16:59 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 static int	look_for_set_begning(char const *s1, char const *set);
-static	int	look_for_set_end(char const *s1, char const *set, size_t len);
+static int	look_for_set_end(char const *s1, char const *set, size_t len);
 static int	char_in_set(const char c1, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)

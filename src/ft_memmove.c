@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 18:17:29 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/19 21:38:34 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:34:41 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*cpysrc;
 	size_t	i;
 
+	if (dest == NULL || src == NULL)
+		return (NULL);
 	cpydest = (char *)dest;
 	cpysrc = (char *)src;
 	i = 0;
@@ -29,13 +31,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
-	else
+	while (i < n)
 	{
-		while (i < n)
-		{
-			*(cpydest + i) = *(cpysrc + i);
-			i++;
-		}
+		*(cpydest + i) = *(cpysrc + i);
+		i++;
 	}
 	return (dest);
 }

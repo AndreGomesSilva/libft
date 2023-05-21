@@ -6,43 +6,81 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:22:59 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/20 11:24:23 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:20:15 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	count_words(char const *s, char c);
+static int	ft_str_len(char *str, char c);
+static void	ft_free(char **obj, int len);
+static char	**add_substrings(char **strings, const char *s, char c, int len);
 
 char	**ft_split(char const *s, char c)
 {
 	int		n_words;
 	char	**strings;
-	int		s_len;
-	int		i;	
 
+	if (!s)
+		return (NULL);
 	n_words = count_words(s, c);
-	strings = (char **) malloc(n_words + 1 * sizeof(char *));
-	s_len = 0;
+	strings = (char **) malloc((n_words + 1) * sizeof(char *));
+	if (strings != NULL)
+		strings = add_substrings(strings, s, c, n_words);
+	return (strings);
+}
+
+static char	**add_substrings(char **strings, const char *s, char c, int len)
+{
+	int	s_len;
+	int	i;
+
 	i = 0;
-	while (*s && i < n_words)
+	while (*s)
 	{
 		while (*s && *s == c)
-		{
 			s++;
+		if (*s)
+		{
+			s_len = ft_str_len((char *)s, c);
+			strings[i] = ft_substr((char *)s, 0, s_len);
+			if (!strings[i])
+			{
+				ft_free(strings, len);
+				return (NULL);
+			}
+			i++;
 		}
-		s_len = 0;
 		while (*s && *s != c)
-		{
-			s_len++;
 			s++;
-		}
-		*(strings + i) = ft_substr(s - s_len, 0, s_len);
+	}
+	strings[i] = NULL;
+	return (strings);
+}
+
+static void	ft_free(char **obj, int len)
+{	
+	int	i;
+
+	i = 0;
+	while (*obj && i < len)
+	{
+		free(obj[i]);
 		i++;
 	}
-	*(strings + i) = NULL;
-	return (strings);
+}
+
+static int	ft_str_len(char *str, char c)
+{
+	int	s_len;
+
+	s_len = 0;
+	while (str[s_len] && str[s_len] != c)
+	{
+		s_len++;
+	}
+	return (s_len);
 }
 
 static int	count_words(char const *s, char c)
@@ -70,20 +108,4 @@ static int	count_words(char const *s, char c)
 			n_words += 1;
 	}
 	return (n_words);
-}
-
-int main()
-{
-	char const s[] = "asda s as das fasf  ";
-	char c = ' ';
-	int i = 0;
-	char **result = ft_split(s, c);
-
-	while (*(result + i))
-	{
-		printf("%s \n", *(result + i));
-		i++;
-	}
-	free(result);
-
 }

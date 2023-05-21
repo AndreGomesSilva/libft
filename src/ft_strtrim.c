@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 10:45:01 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/18 18:51:15 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:21:16 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	total_len;
 	char	*clear_s1;
 
+	if (!s1 || !set)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	index_start = look_for_set_begning(s1, set);
 	total_len = look_for_set_end(s1 + index_start, set, s1_len - index_start);

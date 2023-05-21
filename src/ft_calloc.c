@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 13:33:42 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/15 21:01:53 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:13:26 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	ptr = NULL;
-	if (nmemb == 0 || size == 0 || size >= SIZE_MAX || nmemb >= SIZE_MAX)
+	if (nmemb != 0 && (nmemb * size) / size != nmemb)
 		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (ptr)

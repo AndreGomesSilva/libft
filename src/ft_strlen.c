@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:04:36 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/05 10:46:17 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:53:44 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (*(str + i))
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }

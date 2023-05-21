@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:49:45 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/15 15:46:18 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:18:32 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2_len;
 	char	*new_str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	new_str = (char *) malloc((s1_len + s2_len + 1) * sizeof(char));

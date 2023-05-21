@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 13:34:21 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/14 11:12:31 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:49:06 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	little_len;
 
 	little_len = ft_strlen(little);
-	if (little_len < 1)
+	if (little_len == 0)
 		return ((char *)big);
 	while (*big && len-- >= little_len)
 	{

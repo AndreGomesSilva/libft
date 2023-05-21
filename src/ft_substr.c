@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 19:32:57 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/17 12:30:04 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:19:41 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	const char	*substr;
 	size_t		s_len;
 
+	if (!s)
+		return (NULL);
 	substr = &*(s + start);
 	s_len = ft_strlen(s);
 	if (s_len < start)

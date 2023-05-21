@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 22:43:41 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/13 13:08:50 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:08:05 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strrchr(const char *s, int c)
 	size_t		s_len;
 	char const	*cpys;	
 
-	if (!s)
-		return (NULL);
 	s_len = ft_strlen(s);
 	cpys = s;
 	cpys = s + s_len;

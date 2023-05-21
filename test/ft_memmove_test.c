@@ -43,5 +43,5 @@ TEST (ft_memmove_test, pass_src_and_dest_null_with_size)
 	const char	src[11] = "";
 	char		dest[11] = "";
 
-	TEST_ASSERT_EQUAL(memmove(dest, src, 0), ft_memmove(dest, src, 0));
+	TEST_ASSERT_EQUAL(memmove(dest, src, 3), ft_memmove(dest, src, 3));
 }

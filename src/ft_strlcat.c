@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:27:04 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/12 19:08:40 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:42:12 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_len;
 	size_t	src_len;
 
+	if (!size)
+		return (0);
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	dst = &dst[dst_len];

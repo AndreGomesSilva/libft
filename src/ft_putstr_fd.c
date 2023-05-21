@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 14:30:53 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/17 14:33:30 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:22:11 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	s_len;
 
+	if (!s)
+		return ;
 	s_len = ft_strlen(s);
 	write(fd, s, s_len);
 }

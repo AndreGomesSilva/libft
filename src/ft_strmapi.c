@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:04:11 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/15 17:52:12 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:32:42 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*new_str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
 	new_str = (char *) malloc ((s_len + 1) * sizeof(char));
 	if (new_str != NULL)

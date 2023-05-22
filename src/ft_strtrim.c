@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 10:45:01 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/21 12:16:59 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/21 14:56:32 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	look_for_set_begning(char const *s1, char const *set)
 	return (i);
 }
 
-static	int	look_for_set_end(char const *s1, char const *set, size_t len)
+static int	look_for_set_end(char const *s1, char const *set, size_t len)
 {
 	while (len > 0 && char_in_set(*(s1 + len - 1), set))
 		len--;

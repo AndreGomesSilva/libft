@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 13:27:04 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/21 21:47:20 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/21 18:42:03 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/21 20:46:18 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	dst_len;
-	size_t	src_len;
+	t_list	*current;
+	int		count;
 
-	if ((!dst || !src) && size == 0)
-		return (0);
-	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	dst = &dst[dst_len];
-	if (size < dst_len)
-		return (src_len + size);
-	if (size > 0)
+	current = lst;
+	count = 0;
+	while (current != NULL)
 	{
-		while (*src && size - 1 > dst_len)
-		{
-			*dst++ = *src++;
-			size--;
-		}
-		*(dst) = '\0';
+		count++;
+		current = current -> next;
 	}
-	return (dst_len + src_len);
+	return (count);
 }

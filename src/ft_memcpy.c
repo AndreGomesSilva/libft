@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 20:30:33 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/20 18:15:08 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/21 21:59:25 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*cpydest;
 	size_t	i;
 
+	if (!dest && !src)
+		return (NULL);
 	cpysrc = (char *)src;
 	cpydest = (char *)dest;
 	i = 0;

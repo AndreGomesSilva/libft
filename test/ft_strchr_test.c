@@ -22,8 +22,8 @@ TEST(ft_strchr_test, should_return_the_right_position)
 
 TEST(ft_strchr_test, should_return_NULL_if_str_is_null)
 {
-	char	str1[] = "";
-	char	c = '\0';
+	char	*str1 = NULL;
+	char	c = 0;
 
-	TEST_ASSERT_EQUAL_STRING("" , ft_strchr(str1, c));
+	TEST_ASSERT_EQUAL_STRING(NULL , ft_strchr(str1, c));
 }

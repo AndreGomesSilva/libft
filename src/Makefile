@@ -6,7 +6,7 @@
 #    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/21 21:26:24 by angomes-         ###   ########.fr        #
+#    Updated: 2023/05/22 13:48:37 by angomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,10 @@ FILES_BONUS =\
 	ft_lstsize_bonus \
 	ft_lstlast_bonus \
 	ft_lstadd_back_bonus \
-
+	ft_lstdelone_bonus \
+	ft_lstclear_bonus \
+	ft_lstiter_bonus \
+	ft_lstmap_bonus \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

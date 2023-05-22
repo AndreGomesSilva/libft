@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 19:59:10 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/22 15:41:40 by angomes-         ###   ########.fr       */
+/*   Created: 2023/05/22 13:11:43 by angomes-          #+#    #+#             */
+/*   Updated: 2023/05/22 13:17:22 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*current;
+	t_list	*temp_node;
 
-	if (!lst)
-		return (NULL);
-	current = lst;
-	while (current -> next != NULL)
-		current = current -> next;
-	return (current);
+	if (!lst || !f)
+		return ;
+	temp_node = lst;
+	while (temp_node)
+	{
+		f(temp_node -> content);
+		temp_node = temp_node -> next;
+	}
 }

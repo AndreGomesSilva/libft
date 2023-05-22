@@ -6,11 +6,9 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 19:19:30 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/07 17:52:29 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:12:30 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isdigit(int c)
 {

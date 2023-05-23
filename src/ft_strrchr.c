@@ -6,12 +6,11 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 22:43:41 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/20 18:08:05 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:53:57 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {

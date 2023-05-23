@@ -6,14 +6,14 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:07:36 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/22 13:48:16 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:50:37 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

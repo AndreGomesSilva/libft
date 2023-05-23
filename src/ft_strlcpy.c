@@ -6,11 +6,10 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:21:09 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/11 15:31:23 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:53:30 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)

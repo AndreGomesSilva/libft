@@ -6,12 +6,11 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:04:36 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/20 18:53:44 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:53:37 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlen(const char *str)
 {

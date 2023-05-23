@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:21:07 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/22 15:40:01 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:03:56 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)cpys);
 		cpys++;
 	}
-	if (!c)
+	if ((unsigned char)c == '\0')
 		return ((char *)cpys);
 	return (NULL);
 }

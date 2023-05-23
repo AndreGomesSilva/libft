@@ -6,12 +6,11 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:04:29 by angomes-          #+#    #+#             */
-/*   Updated: 2023/05/21 14:59:05 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:51:20 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static long int	count_len_int(long int n);
 

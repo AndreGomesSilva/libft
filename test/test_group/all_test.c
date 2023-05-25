@@ -3,6 +3,7 @@
 TEST_GROUP_RUNNER(ft_strlen_test)
 {
 	RUN_TEST_CASE(ft_strlen_test, should_return_correct_string_lenght);
+	RUN_TEST_CASE (ft_strlen_test, should_return_null_from_string_true)
 	RUN_TEST_CASE(ft_strlen_test, should_return_null_from_string_null);
 }
 

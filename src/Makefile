@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: angomes- <angomes-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 19:52:35 by angomes-          #+#    #+#              #
-#    Updated: 2023/05/22 16:09:27 by angomes-         ###   ########.fr        #
+#    Updated: 2023/05/24 19:10:55 by angomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+AR = ar -rcs
 RM = rm -f
 
 FILES =\
@@ -72,17 +72,15 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_BONUS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_BONUS)))
 
+all: $(NAME)
+
+$(NAME): $(OBJS)
 
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+	$(AR) $(NAME) $@
 
 bonus: $(OBJS_BONUS)
-	$(AR) $(NAME) $^
-
-all: $(NAME)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
